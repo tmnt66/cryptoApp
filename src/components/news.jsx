@@ -9,10 +9,10 @@ const {Option} = Select;
 
 const News = ({simplified}) => {
 
-const {data : cryptoNews} = useGetCryptoNewsQuery({newsCategory:'Cryptocurrency' , count : simplified ? 6:12})
+const {data : cryptoNews} = useGetCryptoNewsQuery({newsCategory:'Entertainment' , count : simplified ? 6:12})
 
-console.log(cryptoNews)
-console.log(useGetCryptoNewsQuery())
+// console.log(cryptoNews)
+// console.log(useGetCryptoNewsQuery())
 
     return (
         <div>

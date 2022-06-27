@@ -12,6 +12,7 @@ const Cryptocurrencies = ({ simplified }) => {
     const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
     const [cryptos, setCryptos] = useState(cryptosList?.data?.coins)
     const [searchTerm , setSearchTerm] = useState([]);
+    // console.log(cryptosList?.data?.coins)
     useEffect(()=>{
         // setCryptos(cryptosList?.data?.coins);
 
@@ -26,19 +27,19 @@ const Cryptocurrencies = ({ simplified }) => {
     return (
         <>
         {!simplified&&(
-        <div className="search-crypto">
+        <div className="search-crypto" onc>
             <Input placeholder="Search Cryptocurrency" onChange={(e)=> setSearchTerm(e.target.value)}/>
         </div>
         )}
             <Row gutter={[32, 32]} className="crpto-card-container">
                 {cryptos?.map((currency) => (
-                    <Col key={currency.id} xs={24} sm={12} lg={6} className="crypto-card" >
-                        <Link to={`/crypto/${currency.id}`}>
+                    <Col key={cryptos.indexOf(currency)} xs={24} sm={12} lg={6} className="crypto-card" >
+                        <Link to={`/crypto/${cryptos.indexOf(currency)+1}`}>
                             <Card
                                 title={`${currency.rank}.${currency.name}`}
                                 extra={<img className="crypto-image" src={currency.iconUrl} alt="coin" />}
                                 hoverable
-                                key = {currency.id}
+                                key = {cryptos.indexOf(currency)}
                             >
                                 <p>Price: {millify(currency.price)}</p>
                                 <p>Market Cap : {millify(currency.marketCap)}</p>
