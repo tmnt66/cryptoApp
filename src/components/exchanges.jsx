@@ -5,7 +5,7 @@ import React from "react";
 const Exchanges = ()=>{
     return(
         <div>
-       Exchanges
+      NOT AVAILABLE SORRY !!!!!!!!!!!
         </div>
     )
 }
