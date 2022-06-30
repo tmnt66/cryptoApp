@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Avatar, Card, Col, Row, Select, Typography } from "antd";
 import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
-import millify from "millify"
-import { Link } from 'react-router-dom'
-import {  Input } from "antd";
+// import millify from "millify"
+// import { Link } from 'react-router-dom'
+// import {  Input } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { useState } from "react";
 
