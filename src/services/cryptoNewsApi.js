@@ -16,7 +16,7 @@ export const cryptoNewsApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
         getCryptoNews: builder.query({
-            query: ({ newsCategory, count }) => createRequest(`/news/search?q=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`),
+            query: ({ newsCategory, count }) => createRequest(`https://bing-news-search1.p.rapidapi.com/news/search?q=${newsCategory}&count=${count}&freshness=Day&textFormat=Raw&safeSearch=Off`),
         }),
     }),
 });
